@@ -26,11 +26,10 @@ and run `npm install; npm start`
 
 ## Overview
 
-This library allows for you to concentrate layout logic
-into its own components.  It allows you to create a Layout component that can have serveral **&lt;Slots&gt;**  where you can inject content.
+This library allows for you to concentrate all your layout logic into its own components. It allows you to create a layout that can have serveral **&lt;Slots&gt;**  where you can inject content.
 
-A layout aware component can use the **&lt;Page&gt;** component and
-the **&lt;Section&gt;** to the layouts slots.
+A layout aware component can use the **&lt;Page&gt;** 
+and **&lt;Section&gt;** to fill out the slots.
 
 ## Setup
 
@@ -56,7 +55,7 @@ the **&lt;Section&gt;** to the layouts slots.
 	
 	```
 	
-2. You have to make your app layout aware. In order to do this you use the **&lt;LayoutProvider&gt;** component and let it know about the different layouts for your app.
+2. You have to make your app layout aware. In order to do this you use the **&lt;LayoutProvider&gt;** component to let decendants know about the different layouts of your app. It requires that you specify its layouts prop with an object, where the keys are the names and the values are the layout components;
 
 	```js
 	import React, { Component } from 'react';
@@ -108,16 +107,16 @@ the **&lt;Section&gt;** to the layouts slots.
 	}
 	```
 	
-	You have to pass the **layout** property to the **&lt;Page&gt;** , to specify what layout you want to use.
+	You have to pass the **layout** property to the **&lt;Page&gt;**, so it knows what layout you want to use.
 	Similarly each **&lt;Section&gt;** has a **slot** property
-	that ties it to the slot for which it provides content. In this case
+	that ties it to the slot in the layout for which it provides content. In this case
 	since we only have one layout named **public**, and it only has one
 	slot named it **main** we use those values.
 	
 
 ## Usage
 
-1. By default, the root of a slot is a div, but it can be customized via its the **&lt;Slot&gt;** props. Can also customize the component, className and styles. See the documentation for details.
+1. By default, the root of a slot is a div, but it can be customized via its the **&lt;Slot&gt;** props. You can also customize className and styles. See the documentation for details.
 
 2. You can use several slots in a layout.
 
@@ -141,7 +140,7 @@ the **&lt;Section&gt;** to the layouts slots.
 
 4. If a slot doesn't have content it doesn't render at all. Meaning that the dom doesn't contain any elements for that slot. This is usefull because you don't have to have extra elements lying arround.
 
-5. Any props passed to the **&lt;Page&gt;**  component are passed to the layout, as is. This can be usefull for titles, breadcrumbs or to flag any customization that the page requires.
+5. Any props passed to the **&lt;Page&gt;**  component are passed to the layout. This can be usefull for titles, breadcrumbs or to flag any customization that the page requires.
 
 6. Slots can be nested
 
