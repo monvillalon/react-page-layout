@@ -16,6 +16,8 @@ yarn add react-page-layout
 
 ## Preview
 
+![Preview](https://raw.githubusercontent.com/monvillalon/react-page-layout/master/example.gif)
+
 ## Example
 
 There is an example in this repo under the examples directory.
