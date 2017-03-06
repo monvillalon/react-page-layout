@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Page, Section } from 'react-page-layout';
+import { Page, Section } from '../../src';
 import Radios from './Radios';
 
 class MyPage extends PureComponent {
