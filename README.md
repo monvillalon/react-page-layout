@@ -27,16 +27,16 @@ and run `npm install; npm start`
 ## Overview
 
 This library allows for you to concentrate layout logic
-into its own components.  It allows you to create a Layout component that can have serveral **Slots** where you can inject content.
+into its own components.  It allows you to create a Layout component that can have serveral **&lt;Slots&gt;**  where you can inject content.
 
 A layout aware component can use the **&lt;Page&gt;** component and
-the **&lt;Section&gt;** to fill this slots.
+the **&lt;Section&gt;** to the layouts slots.
 
 ## Setup
 
-1. First Step is that you have to create a layout component, this is a regular react component that has several **slots**   where content can be injected. You define one or more slots by using the **&lt;Slot&gt;** component and giving them a name. In this case **main**
+1. First Step is that you have to create a layout component, this is a regular react component that has several **slots**   where content can be injected. You define one or more slots by using the **&lt;Slot&gt;** component and giving them a name. In this case *"main"*
 
-	```
+	```js
 	import React, { Component } from 'react';
 	import { Slot } from 'react-page-layout';
 	
@@ -56,9 +56,9 @@ the **&lt;Section&gt;** to fill this slots.
 	
 	```
 	
-2. You have to make your app, layout aware. In order to do this you use the **&lt;LayoutProvider&gt;** component and let it know about the different layouts for your app.
+2. You have to make your app layout aware. In order to do this you use the **&lt;LayoutProvider&gt;** component and let it know about the different layouts for your app.
 
-	```
+	```js
 	import React, { Component } from 'react';
 	import { render } from 'react-dom';
 	import { LayoutProvider } from 'react-page-layout';
@@ -88,11 +88,11 @@ the **&lt;Section&gt;** to fill this slots.
 
 	```	
 
-	**Note:** Your page components don't have to be direct decendents of the **&lt;LayoutProvider&gt;**, in fact you probably will never use it this way. This is your for illustration purpouses but this feature is what allows you to use this with any routing library.
+	**Note:** Your page components don't have to be direct decendents of the **&lt;LayoutProvider&gt;**, in fact you probably will never use it this way. This is for illustration purposes only. This feature is what allows you to use this package with any routing library.
 
-3. Next you have to create pages, that provides the content for the different slots in your layout. To do this we use two components, **&lt;Page&gt;** and **&lt;Section&gt;**.
+3. Next you have to create pages. The pages provide the content for the different slots in your layout. To do this we use two components, **&lt;Page&gt;** and **&lt;Section&gt;**.
 
-	```
+	```js
 	import { Page, Section } from 'react-page-layout';
 	
 	class LoginPage extends Component {
@@ -109,19 +109,19 @@ the **&lt;Section&gt;** to fill this slots.
 	```
 	
 	You have to pass the **layout** property to the **&lt;Page&gt;** , to specify what layout you want to use.
-	Similarly each **&lt;Section&gt;** has a **name** property
-	that ties it to the slot to which it provides content. In this case
-	since we only have one layout and we named it **public**, and we only have one
-	slot and we named it **main** we use those values.
+	Similarly each **&lt;Section&gt;** has a **slot** property
+	that ties it to the slot for which it provides content. In this case
+	since we only have one layout named **public**, and it only has one
+	slot named it **main** we use those values.
 	
 
-## Advanced Usage
+## Usage
 
-1. By default, the root of a slot is a div, but it can be customized via its *component* prop. You can also customize className and styles.
+1. By default, the root of a slot is a div, but it can be customized via its the **&lt;Slot&gt;** props. Can also customize the component, className and styles. See the documentation for details.
 
-2. You can use several slots in one single layout
+2. You can use several slots in a layout.
 
-	```
+	```js
 		...
 		<Slot name="header" component="header" />
 		<Slot name="content" component="main" />
@@ -131,7 +131,7 @@ the **&lt;Section&gt;** to fill this slots.
 
 3. A slot can have default content, that will be used when no corresponding section is specified
 
-	```
+	```js
 		...
 		<Slot name="header" component="header">
 			Default Header content
@@ -139,13 +139,13 @@ the **&lt;Section&gt;** to fill this slots.
 		...
 	```
 
-4. If a slot doesn't have content it doesn't render at all. Meaning that the dom doesn't contain any elements for that slot.
+4. If a slot doesn't have content it doesn't render at all. Meaning that the dom doesn't contain any elements for that slot. This is usefull because you don't have to have extra elements lying arround.
 
-5. Any props passed to the Page component as passed to the layout. This can be usefull for titles, breadcrumbs or to flag any customization that the page requires.
+5. Any props passed to the **&lt;Page&gt;**  component are passed to the layout, as is. This can be usefull for titles, breadcrumbs or to flag any customization that the page requires.
 
 6. Slots can be nested
 
-	```
+	```js
 		...
 		<Slot name="main" component="main">
 			Ill show up before content
@@ -161,24 +161,26 @@ the **&lt;Section&gt;** to fill this slots.
 		...
 	```
 	
-	the corresponding page can decide, if he wants the margin 
-	or not by which slot it targets. 
+	In this case the  **&lt;Slot&gt;** with name **content** has a margin. And the **main** slot has extra content.
+	The corresponding page can decide, what it wants to show
+	by using the corresponding slot.
 	
-	```
+	```js
 		...
 		<Page layout="mylayout">
 			<Section slot="content"> 
-				I have things on top and after me
+				I have things on top and after me, and
+				I have a margin
 			</Section>
 		</Slot>
 		...
 	```
 	
-	```
+	```js
 		...
 		<Page layout="mylayout">
 			<Section slot="main"> 
-				I take the full content
+				Im alone and margin-less
 			</Section>
 		</Slot>
 		...
