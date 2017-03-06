@@ -1,6 +1,6 @@
 {
   "name": "react-page-layout",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Layout system for react",
   "author": "Jose R Villalon Soler",
   "main": "build/index.js",
