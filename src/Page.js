@@ -17,7 +17,8 @@ class Page extends PureComponent {
 
   getSections(parent) {
     if (isPlainObject(parent)) {
-      if (React.Component.isPrototypeOf(Section) || React.PureComponent.isPrototypeOf(Section)) {
+      // Check if the element is a section
+      if (parent.type && parent.type.displayName === 'Section') {
         return { [parent.props.slot]: parent };
       }
       return {};

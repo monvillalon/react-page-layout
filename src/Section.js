@@ -3,6 +3,8 @@ import React, { PureComponent, PropTypes } from 'react';
 
 class Section extends PureComponent {
 
+  static displayName = 'Section';
+
   static propTypes = {
     slot: PropTypes.string.isRequired,
     children: PropTypes.node,
