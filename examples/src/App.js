@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LayoutProvider } from 'react-page-layout';
+import { LayoutProvider } from '../../src';
 import FullLayout from './FullLayout';
 import PanelLayout from './PanelLayout';
 import MyPage from './MyPage';
