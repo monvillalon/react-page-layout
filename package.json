@@ -1,0 +1,36 @@
+{
+  "name": "react-page-layout",
+  "version": "0.9.0",
+  "description": "Layout system for react",
+  "author": "Jose R Villalon Soler",
+  "main": "build/index.js",
+  "repository": {
+    "url": "git@github.com:monvillalon/react-page-layout.git",
+    "type": "git"
+  },
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean; NODE_ENV=production babel -d ./build ./src -s"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash.isarray": "^4.0.0",
+    "lodash.isplainobject": "^4.0.6"
+  },
+  "peerDependencies": {
+    "react": "^0.14 || ^15.0.0-rc || ^15.0",
+    "react-dom": "^0.14 || ^15.0.0-rc || ^15.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0"
+  }
+}
