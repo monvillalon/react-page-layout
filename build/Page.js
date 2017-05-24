@@ -51,7 +51,8 @@ var Page = function (_PureComponent) {
     key: 'getSections',
     value: function getSections(parent) {
       if ((0, _lodash2.default)(parent)) {
-        if (_react2.default.Component.isPrototypeOf(_Section2.default) || _react2.default.PureComponent.isPrototypeOf(_Section2.default)) {
+        // Check if the element is a section
+        if (parent.type && parent.type.displayName === 'Section') {
           return _defineProperty({}, parent.props.slot, parent);
         }
         return {};

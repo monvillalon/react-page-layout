@@ -38,6 +38,7 @@ var Section = function (_PureComponent) {
   return Section;
 }(_react.PureComponent);
 
+Section.displayName = 'Section';
 Section.propTypes = {
   slot: _react.PropTypes.string.isRequired,
   children: _react.PropTypes.node
