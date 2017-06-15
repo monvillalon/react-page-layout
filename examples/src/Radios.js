@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Radios(props) {
   const { name, value, options, disabled, onChange } = props;

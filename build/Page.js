@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _lodash = require('lodash.isplainobject');
 
 var _lodash2 = _interopRequireDefault(_lodash);
@@ -97,11 +101,11 @@ var Page = function (_PureComponent) {
 }(_react.PureComponent);
 
 Page.propTypes = {
-  layout: _react.PropTypes.string.isRequired,
-  children: _react.PropTypes.node.isRequired
+  layout: _propTypes2.default.string.isRequired,
+  children: _propTypes2.default.node.isRequired
 };
 Page.contextTypes = {
-  getLayout: _react.PropTypes.func.isRequired
+  getLayout: _propTypes2.default.func.isRequired
 };
 exports.default = Page;
 //# sourceMappingURL=Page.js.map
