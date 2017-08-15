@@ -62,14 +62,6 @@ var Slot = function (_Component) {
 Slot.contextTypes = {
   getSection: _propTypes2.default.func.isRequired
 };
-Slot.propTypes = {
-  name: _propTypes2.default.string.isRequired,
-  component: _propTypes2.default.any, // eslint-disable-line
-  wrapper: _propTypes2.default.element,
-  className: _propTypes2.default.string,
-  style: _propTypes2.default.object, // eslint-disable-line
-  children: _propTypes2.default.node
-};
 Slot.defaultProps = {
   component: 'div',
   wrapper: undefined,

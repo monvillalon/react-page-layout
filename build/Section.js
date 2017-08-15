@@ -43,9 +43,5 @@ var Section = function (_PureComponent) {
 }(_react.PureComponent);
 
 Section.displayName = 'Section';
-Section.propTypes = {
-  slot: _propTypes2.default.string.isRequired,
-  children: _propTypes2.default.node
-};
 exports.default = Section;
 //# sourceMappingURL=Section.js.map

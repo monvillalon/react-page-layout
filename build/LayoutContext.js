@@ -51,10 +51,6 @@ var LayoutContext = function (_PureComponent) {
   return LayoutContext;
 }(_react.PureComponent);
 
-LayoutContext.propTypes = {
-  sections: _propTypes2.default.objectOf(_propTypes2.default.element).isRequired,
-  children: _propTypes2.default.element.isRequired
-};
 LayoutContext.childContextTypes = {
   getSection: _propTypes2.default.func.isRequired
 };

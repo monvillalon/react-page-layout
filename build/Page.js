@@ -100,10 +100,6 @@ var Page = function (_PureComponent) {
   return Page;
 }(_react.PureComponent);
 
-Page.propTypes = {
-  layout: _propTypes2.default.string.isRequired,
-  children: _propTypes2.default.node.isRequired
-};
 Page.contextTypes = {
   getLayout: _propTypes2.default.func.isRequired
 };

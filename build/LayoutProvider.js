@@ -56,10 +56,6 @@ var LayoutProvider = function (_PureComponent) {
   return LayoutProvider;
 }(_react.PureComponent);
 
-LayoutProvider.propTypes = {
-  layouts: _propTypes2.default.objectOf(_propTypes2.default.any).isRequired,
-  children: _propTypes2.default.element.isRequired
-};
 LayoutProvider.childContextTypes = {
   getLayout: _propTypes2.default.func.isRequired
 };
