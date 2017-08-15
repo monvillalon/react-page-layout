@@ -8,6 +8,12 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _react = require('react');
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -46,11 +52,11 @@ var LayoutContext = function (_PureComponent) {
 }(_react.PureComponent);
 
 LayoutContext.propTypes = {
-  sections: _react.PropTypes.objectOf(_react.PropTypes.element).isRequired,
-  children: _react.PropTypes.element.isRequired
+  sections: _propTypes2.default.objectOf(_propTypes2.default.element).isRequired,
+  children: _propTypes2.default.element.isRequired
 };
 LayoutContext.childContextTypes = {
-  getSection: _react.PropTypes.func.isRequired
+  getSection: _propTypes2.default.func.isRequired
 };
 exports.default = LayoutContext;
 //# sourceMappingURL=LayoutContext.js.map

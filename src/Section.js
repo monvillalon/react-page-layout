@@ -1,5 +1,6 @@
 /* eslint no-unreachable: off, react/require-render-return: off */
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 class Section extends PureComponent {
 

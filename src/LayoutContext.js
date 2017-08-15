@@ -1,4 +1,5 @@
-import { PureComponent, PropTypes, Children } from 'react';
+import { PureComponent, Children } from 'react';
+import PropTypes from 'prop-types';
 
 class LayoutContext extends PureComponent {
 
